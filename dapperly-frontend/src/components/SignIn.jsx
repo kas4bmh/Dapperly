@@ -14,6 +14,7 @@ const SignInPage = () => {
   const { isAuthenticated, login } = useAuth();
   const navigate = useNavigate();
 
+  const API_BASE_URL = 'https://dapperly-bpcbh3erbzc4ckhh.eastasia-01.azurewebsites.net';
   useEffect(() => {
     if (isAuthenticated) {
       navigate('/products');
@@ -23,7 +24,7 @@ const SignInPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://localhost:44314/api/Auth/login', {
+      const response = await axios.post(`${API_BASE_URL}/api/Auth/login/api/Auth/login`, {
         emailid: username,
         password,
       });
@@ -47,7 +48,7 @@ const SignInPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://localhost:44314/api/Auth/register', {
+      const response = await axios.post(`${API_BASE_URL}/api/Auth/login/api/Auth/register`, {
         company,
         emailid: username,
         password,
