@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FaEdit, FaPlus, FaShoppingCart } from 'react-icons/fa';
 
+const API_BASE_URL = 'https://dapperly-bpcbh3erbzc4ckhh.eastasia-01.azurewebsites.net';
 const ProductList = () => {
   const { addToCart } = useCart();
   const { token, loggedInUser, logout } = useAuth();
@@ -18,7 +19,7 @@ const ProductList = () => {
   useEffect(() => {
     if (!token) return;
 
-    axios.get("https://localhost:44314/api/Service/allProducts", {
+    axios.get(`${API_BASE_URL}/api/Service/allProducts`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

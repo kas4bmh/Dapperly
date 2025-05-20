@@ -10,11 +10,12 @@ export const CartProvider = ({ children }) => {
   const { token, loggedInUser } = useAuth();
   const [cart, setCart] = useState([]);
 
+  const API_BASE_URL = 'https://dapperly-bpcbh3erbzc4ckhh.eastasia-01.azurewebsites.net';
   // Load cart on user login
   useEffect(() => {
     if (!token || !loggedInUser?.id) return;
 
-    axios.get(`https://localhost:44314/api/Service/cartByUserId/${loggedInUser.id}`, {
+    axios.get(`${API_BASE_URL}/api/Service/cartByUserId/${loggedInUser.id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -97,7 +98,7 @@ console.log(res);
 
      const postAsync =async (payload)=>{ 
       var res=await axios.post(
-        'https://localhost:44314/api/service/addToCart',
+        `${API_BASE_URL}/api/service/addToCart`,
         payload,
         {
           headers: {
@@ -111,7 +112,7 @@ console.log(res);
     const removeCartAsync= async(cartId)=>{
      
        await axios.delete(
-      `https://localhost:44314/api/service/removeFromCart/${cartId}`,
+      `${API_BASE_URL}/api/service/removeFromCart/${cartId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -122,7 +123,7 @@ console.log(res);
 
     const updateCart = async (payload) => {
   try {
-    const response = await axios.put('https://localhost:44314/api/Service/updateCart',payload,{
+    const response = await axios.put(`${API_BASE_URL}/api/Service/updateCart`,payload,{
           headers: {
             Authorization: `Bearer ${token}`
           }
