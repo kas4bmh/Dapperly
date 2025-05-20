@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "N6ZKDTLn9ANbAi9opFZn2JQCiZj19JzoTQTyjP7lht8=",
+  "Source": "DapperlyApi",
+  "BasePath": "_content/DapperlyApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
