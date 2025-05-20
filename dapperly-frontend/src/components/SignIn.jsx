@@ -24,7 +24,7 @@ const SignInPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/Auth/login/api/Auth/login`, {
+      const response = await axios.post(`${API_BASE_URL}/api/Auth/login`, {
         emailid: username,
         password,
       });
@@ -48,7 +48,7 @@ const SignInPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/Auth/login/api/Auth/register`, {
+      const response = await axios.post(`${API_BASE_URL}/api/Auth/register`, {
         company,
         emailid: username,
         password,
