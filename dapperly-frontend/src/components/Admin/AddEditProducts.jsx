@@ -61,7 +61,7 @@ axios.get(`${API_BASE_URL}/api/service/getProdById/${id}`, {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!isUpdate){
-       axios.post("${API_BASE_URL}/api/service/addProduct", product, {
+       axios.post(`${API_BASE_URL}/api/service/addProduct`, product, {
   headers: {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'  // Optional but good to specify
