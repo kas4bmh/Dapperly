@@ -119,12 +119,23 @@ return (
           </span>
         </p>
       ) : (
+        // <p>
+        //   Don’t have an account?{' '}
+        //   <span onClick={() => setIsRegistering(true)} className="link">
+        //     Register
+        //   </span>
+        // </p>
         <p>
-          Don’t have an account?{' '}
-          <span onClick={() => setIsRegistering(true)} className="link">
-            Register
-          </span>
-        </p>
+              Don’t have an account?{' '}
+              <span onClick={(e) => {
+                e.currentTarget.classList.add('clicked');
+                setTimeout(() => {
+                  e.currentTarget.classList.remove('clicked');
+                  }, 200); // Effect lasts for 200 milliseconds
+                  setIsRegistering(true);
+                  }} className="link register-link">
+                    Register
+                    </span></p>
       )}
     </div>
   </div>
