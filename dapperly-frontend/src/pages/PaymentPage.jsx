@@ -23,6 +23,7 @@ const PaymentPage = () => {
     console.log('Expiry Date:', expiryDate);
     console.log('CVV:', cvv);
     
+    const API_BASE_URL = 'https://dapperly-bpcbh3erbzc4ckhh.eastasia-01.azurewebsites.net';
     var payload={
       orderAddress:address,
       userId:loggedInUser["id"],
@@ -31,7 +32,7 @@ const PaymentPage = () => {
 
     console.log(payload);
 
-   axios.post(`https://localhost:44314/api/service/processOrder`, payload, {
+   axios.post(`${API_BASE_URL}/api/service/processOrder`, payload, {
   headers: {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'  // Optional but good to specify
