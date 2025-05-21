@@ -52,8 +52,9 @@
   background-color: #2980b9;
 }
 
-.register-link.clicked {
-  color: blue; /* Example: change text color */
-  background-color: #e0e0e0; /* Example: add a light background */
-  transition: all 0.1s ease-out; /* Smooth transition for the effect */
+.register-link.clicked,
+.clickable-link.clicked {
+  color: #ffffff;
+  background-color: #3498db;
+  transform: scale(0.98);
 }
