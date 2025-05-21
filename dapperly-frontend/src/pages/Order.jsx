@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../components/AuthContext";
 import "../css/Orders.css"
 
+
+const API_BASE_URL = 'https://dapperly-bpcbh3erbzc4ckhh.eastasia-01.azurewebsites.net';
 const OrderPage = () => {
   const [orders, setOrders] = useState([]);
   const { token, loggedInUser, logout } = useAuth();
@@ -11,7 +13,7 @@ const OrderPage = () => {
     if (!loggedInUser?.id) return;
 
     axios
-      .get(`https://localhost:44314/api/Service/orderByUserId/${loggedInUser.id}`, {
+      .get(`${API_BASE_URL}/api/Service/orderByUserId/${loggedInUser.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

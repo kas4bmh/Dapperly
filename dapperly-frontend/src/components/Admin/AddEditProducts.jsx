@@ -89,7 +89,7 @@ axios.get(`${API_BASE_URL}/api/service/getProdById/${id}`, {
   }
 });
     }else{
- axios.put(`https://localhost:44314/api/service/updateProduct/${id}`, product, {
+ axios.put(`${API_BASE_URL}/api/service/updateProduct/${id}`, product, {
   headers: {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'  // Optional but good to specify
