@@ -112,12 +112,18 @@ return (
 
     <div className="toggle-link">
       {isRegistering ? (
-        <p>
-          Already have an account?{' '}
-          <span onClick={() => setIsRegistering(false)} className="link">
-            Sign In
-          </span>
-        </p>
+       <p>
+       Already have an account?{' '}
+       <span onClick={(e) => {
+         e.currentTarget.classList.add('clicked');
+         setTimeout(() => {
+           e.currentTarget.classList.remove('clicked');
+         }, 200); // Effect lasts for 200 milliseconds
+         setIsRegistering(false);
+       }} className="link clickable-link">
+         Sign In
+       </span>
+     </p>
       ) : (
         // <p>
         //   Don’t have an account?{' '}
@@ -126,7 +132,7 @@ return (
         //   </span>
         // </p>
         <p>
-              Don’t have an account?{' '}
+              New to Dapperly?  {' '}
               <span onClick={(e) => {
                 e.currentTarget.classList.add('clicked');
                 setTimeout(() => {
