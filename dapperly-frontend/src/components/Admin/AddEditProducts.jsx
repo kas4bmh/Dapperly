@@ -9,7 +9,7 @@ const categories = ['Electronics', 'Books', 'Clothing', 'Furniture'];
 const AddEditProduct = () => {
   var {token}=useAuth();
 
-    
+  const API_BASE_URL = 'https://dapperly-bpcbh3erbzc4ckhh.eastasia-01.azurewebsites.net';
   const [product, setProduct] = useState({
     productName: '',
     category: '',
@@ -26,7 +26,7 @@ const AddEditProduct = () => {
 
   useEffect(() => {
     if (id) {
-axios.get(`https://localhost:44314/api/service/getProdById/${id}`, {
+axios.get(`${API_BASE_URL}/api/service/getProdById/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -61,7 +61,7 @@ axios.get(`https://localhost:44314/api/service/getProdById/${id}`, {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!isUpdate){
-       axios.post("https://localhost:44314/api/service/addProduct", product, {
+       axios.post("${API_BASE_URL}/api/service/addProduct", product, {
   headers: {
     Authorization: `Bearer ${token}`,
     'Content-Type': 'application/json'  // Optional but good to specify
